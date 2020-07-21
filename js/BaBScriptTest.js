@@ -151,7 +151,7 @@ babScriptTester.startCalculation = function () {
                 });
                 babScriptTester.engineFunc("game_started", {});
                 ++engine.game_id;
-                console.log("Crashing at: " + babScriptTester.currentCrash);
+                //console.log("Crashing at: " + babScriptTester.currentCrash);
                 babScriptTester.engineFunc("game_crash", {
                     game_crash: babScriptTester.currentCrash * 100
                 });
@@ -161,7 +161,7 @@ babScriptTester.startCalculation = function () {
                 else {
                     babScriptTester.lastGamePlayed = true;
                 }
-                console.log("Balance: " + ((babScriptTester.balance) / 100));
+                //console.log("Balance: " + ((babScriptTester.balance) / 100));
                 if (babScriptTester.makeChart) {
                     if (babScriptTester.prevBalance) {
                         babScriptTester.force_color = babScriptTester.prevBalance > babScriptTester.balance ? "red" : "green";
