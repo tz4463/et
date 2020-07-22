@@ -19,7 +19,7 @@ var babScriptTester = {
     , lastGame: 0
     , balanceLog: []
     , genOutcomes: function (hash, amount) {
-        crashes.forEach(c => this.crashList.unshift(c / 100));
+        this.crashList = crashes;
     }
     , divisible: function (hash, mod) {
         // So ABCDEFGHIJ should be chunked like  AB CDEF GHIJ
