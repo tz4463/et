@@ -19,14 +19,7 @@ var babScriptTester = {
     , lastGame: 0
     , balanceLog: []
     , genOutcomes: function (hash, amount) {
-        var lastHash = "";
-        for (var i = 0; i < amount; i++) {
-            var gameHash = (lastHash != "" ? this.genGameHash(lastHash) : hash);
-            var gameCrash = this.crashPointFromHash((lastHash != "" ? this.genGameHash(lastHash) : hash));
-            var clr = gameCrash > 1.97 ? 'green' : (gameCrash < 1.97 ? 'red' : 'blue');
-            this.crashList.unshift(gameCrash);
-            lastHash = gameHash;
-        }
+        this.crashList = crashes;
     }
     , divisible: function (hash, mod) {
         // So ABCDEFGHIJ should be chunked like  AB CDEF GHIJ
@@ -115,7 +108,6 @@ babScriptTester.simulateFromAuto = function (baseBetInBits, autoCashoutAt, stopA
 engine.game_id = 0;
 
 babScriptTester.startCalculation = function () {
-        console.log('crashes length: ' + crashes.length);
         babScriptTester.savePrefs();
         babScriptTester.makeChart = document.getElementById("chartCheckbox").checked;
         babScriptTester.startBalance = parseInt(document.getElementById("startBalInput").value) * 100;
