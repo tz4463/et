@@ -1,4 +1,5 @@
 var engine = {};
+console.log('crashes length: ' + crashes.length);
 var babScriptTester = {
     startBalance: 0
     , timeToStop: false
