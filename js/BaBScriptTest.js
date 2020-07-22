@@ -1,5 +1,5 @@
 var engine = {};
-console.log('crashes length: ' + crashes.length);
+
 var babScriptTester = {
     startBalance: 0
     , timeToStop: false
@@ -115,6 +115,7 @@ babScriptTester.simulateFromAuto = function (baseBetInBits, autoCashoutAt, stopA
 engine.game_id = 0;
 
 babScriptTester.startCalculation = function () {
+        console.log('crashes length: ' + crashes.length);
         babScriptTester.savePrefs();
         babScriptTester.makeChart = document.getElementById("chartCheckbox").checked;
         babScriptTester.startBalance = parseInt(document.getElementById("startBalInput").value) * 100;
